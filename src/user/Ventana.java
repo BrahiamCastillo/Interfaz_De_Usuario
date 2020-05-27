@@ -1,10 +1,7 @@
 package user;
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.util.Vector;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -19,7 +16,7 @@ import javax.swing.border.Border;
 
 public class Ventana {
 	JFrame ventana;
-	Border blackline;
+	Border titulo, blackline;
 	JPanel panel1, panel2, panel3, panel4, panel5;
 	JLabel uno, dos, tres, cuatro, cinco, seis, siete, ocho;
 	JTextField campo1, campo2, campo3, campo4, campo5;
@@ -33,11 +30,9 @@ public class Ventana {
 	void Componentes() {
 		panel1=new JPanel();
 		blackline=BorderFactory.createLineBorder(Color.black);
+		titulo=BorderFactory.createTitledBorder(blackline, "Datos Personales");
 		panel1.setLayout(null);
-		panel1.setBorder(blackline);
-		uno=new JLabel("Datos personales");
-		uno.setFont(new Font("Times New Roman",Font.BOLD,13));
-		uno.setBounds(15,-30,100,100);
+		panel1.setBorder(titulo);
 		dos=new JLabel("Nombres del contacto:");
 		dos.setFont(new Font("Times New Roman",Font.BOLD,12));
 		dos.setBounds(15,-28,150,150);
@@ -85,16 +80,6 @@ public class Ventana {
 		combo1.addItem("Femenino");
 		combo1.addItem("Masculino");
 		combo1.setBounds(520,210,182,27);
-
-		
-
-		
-
-
-
-
-
-		panel1.add(uno);
 		panel1.add(dos);
 		panel1.add(campo1);
 		panel1.add(tres);
@@ -109,7 +94,6 @@ public class Ventana {
 		panel1.add(ocho);
 		panel1.add(boton1);
 		panel1.add(combo1);
-		
 		panel2=new JPanel();
 		panel2.setLayout(null);
 		boton2=new JButton("Probar Conexión");
@@ -118,9 +102,6 @@ public class Ventana {
 		boton3=new JButton("Otro botón");
 		boton3.setFont(new Font("Times New Roman",Font.BOLD,14));
 		boton3.setBounds(505,10,230,27);
-		
-		
-		
 		Vector<String> fila= new Vector<String>();
 		Vector<Vector> filatotal= new Vector<Vector>();
 		filatotal.addElement(fila);
@@ -152,13 +133,6 @@ public class Ventana {
 		boton9=new JButton("Salir");
 		boton9.setFont(new Font("Times New Roman",Font.BOLD,14));
 		boton9.setBounds(610,265,120,35);
-
-	
-
-
-
-		
-		
 		panel2.add(boton2);
 		panel2.add(boton3);
 		panel2.add(jsb);
@@ -179,9 +153,6 @@ public class Ventana {
 		Componentes();
 		ventana.add(panel1);
 		ventana.add(panel2);
-
-		
-		
 		ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);
 		ventana.setDefaultCloseOperation(ventana.EXIT_ON_CLOSE);
