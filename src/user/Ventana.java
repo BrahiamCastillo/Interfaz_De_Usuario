@@ -3,6 +3,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.util.Vector;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -10,6 +12,8 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
@@ -26,7 +30,7 @@ public class Ventana {
 		Estructura();
 	}
 	
-	void ParteSuperior() {
+	void Componentes() {
 		panel1=new JPanel();
 		blackline=BorderFactory.createLineBorder(Color.black);
 		panel1.setLayout(null);
@@ -113,7 +117,23 @@ public class Ventana {
 		boton2.setBounds(10,10,230,27);
 		boton3=new JButton("Otro botón");
 		boton3.setFont(new Font("Times New Roman",Font.BOLD,14));
-		boton3.setBounds(510,10,230,27);
+		boton3.setBounds(505,10,230,27);
+		
+		
+		
+		Vector<String> fila= new Vector<String>();
+		Vector<Vector> filatotal= new Vector<Vector>();
+		filatotal.addElement(fila);
+		Vector<String> columna= new Vector<String>();
+		columna.addElement("Nombres:");
+		columna.addElement("Apellidos:");
+		columna.addElement("Email:");
+		columna.addElement("Telefono:");
+		columna.addElement("Dirección:");
+		columna.addElement("Sexo:");
+		JTable tabla=new JTable(filatotal,columna);
+		JScrollPane jsb=new JScrollPane(tabla);
+		jsb.setBounds(10,50,725,200);
 
 
 	
@@ -124,17 +144,21 @@ public class Ventana {
 		
 		panel2.add(boton2);
 		panel2.add(boton3);
+		panel2.add(jsb);
+		
 		
 	}
+	
 	
 	void Estructura() {
 		ventana= new JFrame();
 		ventana.setTitle("Formulario de contacto");
 		ventana.setSize(760,680);
 		ventana.setLayout(new BoxLayout(ventana.getContentPane(),BoxLayout.Y_AXIS));
-		ParteSuperior();
+		Componentes();
 		ventana.add(panel1);
 		ventana.add(panel2);
+
 		
 		
 		ventana.setLocationRelativeTo(null);
