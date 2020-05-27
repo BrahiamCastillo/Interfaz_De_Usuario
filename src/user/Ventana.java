@@ -23,7 +23,7 @@ public class Ventana {
 	JPanel panel1, panel2, panel3, panel4, panel5;
 	JLabel uno, dos, tres, cuatro, cinco, seis, siete, ocho;
 	JTextField campo1, campo2, campo3, campo4, campo5;
-	JButton boton1, boton2, boton3;
+	JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8, boton9;
 	JComboBox<String> combo1;
 	
 	public Ventana() {
@@ -134,7 +134,24 @@ public class Ventana {
 		JTable tabla=new JTable(filatotal,columna);
 		JScrollPane jsb=new JScrollPane(tabla);
 		jsb.setBounds(10,50,725,200);
-
+		boton4=new JButton("Ir");
+		boton4.setFont(new Font("Times New Roman",Font.BOLD,14));
+		boton4.setBounds(10,265,120,35);
+		boton5=new JButton("Guardar");
+		boton5.setFont(new Font("Times New Roman",Font.BOLD,14));
+		boton5.setBounds(130,265,120,35);
+		boton6=new JButton("Eliminar");
+		boton6.setFont(new Font("Times New Roman",Font.BOLD,14));
+		boton6.setBounds(250,265,120,35);
+		boton7=new JButton("Modificar");
+		boton7.setFont(new Font("Times New Roman",Font.BOLD,14));
+		boton7.setBounds(370,265,120,35);
+		boton8=new JButton("Limpiar");
+		boton8.setFont(new Font("Times New Roman",Font.BOLD,14));
+		boton8.setBounds(490,265,120,35);
+		boton9=new JButton("Salir");
+		boton9.setFont(new Font("Times New Roman",Font.BOLD,14));
+		boton9.setBounds(610,265,120,35);
 
 	
 
@@ -145,8 +162,12 @@ public class Ventana {
 		panel2.add(boton2);
 		panel2.add(boton3);
 		panel2.add(jsb);
-		
-		
+		panel2.add(boton4);
+		panel2.add(boton5);
+		panel2.add(boton6);
+		panel2.add(boton7);
+		panel2.add(boton8);
+		panel2.add(boton9);
 	}
 	
 	
