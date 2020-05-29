@@ -17,7 +17,7 @@ import javax.swing.border.Border;
 public class Ventana {
 	JFrame ventana;
 	Border titulo, blackline;
-	JPanel panel1, panel2, panel3, panel4, panel5;
+	JPanel panel1, panel2;
 	JLabel uno, dos, tres, cuatro, cinco, seis, siete, ocho;
 	JTextField campo1, campo2, campo3, campo4, campo5;
 	JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8, boton9;
@@ -29,8 +29,7 @@ public class Ventana {
 	
 	void Componentes() {
 		panel1=new JPanel();
-		blackline=BorderFactory.createLineBorder(Color.black);
-		titulo=BorderFactory.createTitledBorder(blackline, "Datos Personales");
+		titulo=BorderFactory.createTitledBorder(BorderFactory.createMatteBorder(2,2,2,2,Color.black), "Datos Personales");
 		panel1.setLayout(null);
 		panel1.setBorder(titulo);
 		dos=new JLabel("Nombres del contacto:");
@@ -65,6 +64,7 @@ public class Ventana {
 		campo5.setBounds(15,212,250,22);
 		siete=new JLabel(" ");
 		siete.setFont(new Font("Times New Roman",Font.CENTER_BASELINE,15));
+		blackline= BorderFactory.createLineBorder(Color.black);
 		siete.setBorder(blackline);
 		siete.setSize(170,150);
 		siete.setBounds(520,25,180,150);
